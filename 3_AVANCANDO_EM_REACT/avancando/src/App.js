@@ -3,13 +3,16 @@ import './App.css';
 
 import City from './assets/city.jpg';
 import CarDetails from './components/CarDetails';
+import ChangeMessageState from './components/ChangeMessageState';
 import ConditionalRender from './components/ConditionalRender';
 import Container from './components/Container';
 import ExecuteFunction from './components/ExecuteFunction';
 import Fragment from './components/Fragment';
 import ListRender from './components/ListRender';
 import ManageData from './components/ManageData';
+import Message from './components/Message';
 import ShowUserName from './components/ShowUserName';
+import UserDetails from './components/UserDetails';
 
 function App() {
 
@@ -25,7 +28,20 @@ function App() {
 
   function showMessage(){
     console.log("Evento do componente pai")
+  };
+
+  const [message, setMessage] = useState("");
+
+  const handleMessage =(msg) => {
+    setMessage(msg);
   }
+
+  const users = [
+    {id: 1, name: "Bernardo", job: "Programador", age: 27},
+    {id: 2, name: "João", job: "Engenheiro", age: 32},
+    {id: 3, name: "Miguel", job: "Psicólogo", age: 23},
+    {id: 4, name: "Zé", job: "Motora", age: 16},
+  ]
 
   return (
     <div className="App">
@@ -60,6 +76,16 @@ function App() {
         <h5>Testando container</h5>
       </Container>
       <ExecuteFunction myFunction={showMessage}/>
+      <Message msg={message}/>
+      <ChangeMessageState handleMessage={handleMessage}/>
+      {users.map((user) =>(
+        <UserDetails 
+        key={user.id} 
+        name={user.name} 
+        job={user.job} 
+        age={user.age}
+        />
+      ))}
     </div>
   );
 };
