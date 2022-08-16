@@ -4,13 +4,15 @@ import './App.css';
 import City from './assets/city.jpg';
 import CarDetails from './components/CarDetails';
 import ConditionalRender from './components/ConditionalRender';
+import Container from './components/Container';
+import Fragment from './components/Fragment';
 import ListRender from './components/ListRender';
 import ManageData from './components/ManageData';
 import ShowUserName from './components/ShowUserName';
 
 function App() {
 
-  const name = "Joaquim"
+  //const name = "Joaquim"
 
   const [userName] = useState("Maria")
 
@@ -44,6 +46,13 @@ function App() {
         newCar={car.newCar}
         />
       ))}
+      <Fragment propFragment="teste"/>
+      <Container myValue="testing">
+        <p>Este é o conteúdo</p>
+      </Container>
+      <Container myValue="testing 2">
+        <h5>Testando container</h5>
+      </Container>
     </div>
   );
 };
