@@ -10,9 +10,9 @@ import ShowUserName from './components/ShowUserName';
 
 function App() {
 
-    const name = "Joaquim"
+  const name = "Joaquim"
 
-    const [userName] = useState("Maria")
+  const [userName] = useState("Maria")
 
   return (
     <div className="App">
@@ -23,11 +23,11 @@ function App() {
       <div>
         <img src={City} alt="City" />
       </div>
-      <ManageData/>
-      <ListRender/>
-      <ConditionalRender/>
-      <ShowUserName name={userName}/>
-      <CarDetails brand="VW" km={100000} color="vermelho"/>
+      <ManageData />
+      <ListRender />
+      <ConditionalRender />
+      <ShowUserName name={userName} />
+      <CarDetails brand="VW" km={100000} color="vermelho" />
     </div>
   );
 };
